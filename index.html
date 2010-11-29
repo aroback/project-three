@@ -54,12 +54,12 @@
 
 <img src="./images/logo_twitter_wordmark.png" alt="the Twitter wordmark" />
 
-
 <?php 
 			$feed = new SimplePie();
-			$feed->set_feed_url('http://twitter.com/statuses/user_timeline/16049663.rss');
+			$feed->set_feed_url('http://twitter.com/statuses/user_timeline/20893245.rss');
 			$feed->enable_cache(false);
 			$feed->init();
+			$feed->handle_content_type();
 			echo $feed->get_title();
 			echo $feed->get_link();
 			echo '<h1><a href="'.$feed->get_link().'">'.$feed->get_title().'</a></h1>';
