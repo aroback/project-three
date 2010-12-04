@@ -55,6 +55,11 @@
 <img src="./images/logo_twitter_wordmark.png" alt="the Twitter wordmark" />
 
 <?php 
+
+twitter();
+
+function twitter() {
+
 			$feed = new SimplePie();
 			$feed->set_feed_url('http://twitter.com/statuses/user_timeline/20893245.rss');
 			$feed->enable_cache(false);
@@ -64,6 +69,8 @@
 			foreach ($myitems as $item) {
 				echo '<p>'.$item->get_title().'</p>';
 			}
+		
+}		
 		?>
 		
 
