@@ -76,9 +76,9 @@ function twitter() {
 		else {
 			for($i=0; $i < 5; $i++) {
 			$i < 5;
-			$items = $feed->get_item($i);
-			$tweet = substr($items->get_title(), 15);
-			echo '<p>'.$tweet.'</p>';
+			$item = $feed->get_item($i);
+			$tweet = substr($item->get_title(), 15);
+			print '<p>'.$tweet.'</p>';
 			}
 			}
 			}
