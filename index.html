@@ -61,13 +61,23 @@ twitter();
 function twitter() {
 
 			$feed = new SimplePie();
+			$feed->enable_cache(false);	
 			$feed->set_feed_url('http://twitter.com/statuses/user_timeline/20893245.rss');
-			$feed->enable_cache(false);
-			$feed->init();
 			$feed->handle_content_type();
-			$myitems = $feed->get_items();
+			$feed->init();
+
+
+		if($feed->error()) {
+  /*If there's an error message, spit it out and stop*/
+  print "<p class=\"tweet\">".$feed->error()."</p>
+  <p><strong>Fail Whale. Check back when Twitter is working again.<strong></p>";
+}
+
+		else {
+  			$myitems = $feed->get_items();
 			foreach ($myitems as $item) {
-				echo '<p>'.$item->get_title().'</p>';
+			echo '<p>'.$item->get_title().'</p>';
+			}
 			}
 		
 }		
