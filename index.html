@@ -78,7 +78,16 @@ function twitter() {
 			$i < 5;
 			$item = $feed->get_item($i);
 			$tweet = substr($item->get_title(), 15);
-			print '<p>'.$tweet.'</p>';
+			$tweet = substr(addslashes(html_entity_decode($item->get_title())), 15);
+		$tweetdate = $item->get_date('F j');
+		$tweetday = $item->get_date('j');
+		$ksd = date('j');
+		  if ($tweetday==$ksd) { $tweetdate = "today"; }
+		  else if ($tweetday==($ksd-1)) { $tweetdate = "yesterday"; }
+		  else { $tweetdate = "On " . $tweetdate; }
+		$tweettime = $item->get_date('g\:i a');
+		
+			print "<p>".$tweet."</p><p>".$tweetdate." at ".$tweettime."</p>";
 			}
 			}
 			}
