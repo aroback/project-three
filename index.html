@@ -76,7 +76,7 @@ function twitter() {
 		else {
 			for($i=0; $i < 5; $i++) {
 			$i < 5;
-			$items = $feed->get_item();
+			$items = $feed->get_item($i);
 			echo '<p>'.$items->get_title($i).'</p>';
 			}
 			}
