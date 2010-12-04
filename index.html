@@ -74,13 +74,10 @@ function twitter() {
 }
 
 		else {
-  			$myitems = $feed->get_items();
-			foreach ($myitems as $item) {
+  			$item = $feed->get_item();
 			echo '<p>'.$item->get_title().'</p>';
 			}
 			}
-		
-}		
 		?>
 		
 
