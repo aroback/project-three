@@ -82,12 +82,24 @@ function twitter() {
 		$tweetdate = $item->get_date('F j');
 		$tweetday = $item->get_date('j');
 		$ksd = date('j');
-		  if ($tweetday==$ksd) { $tweetdate = "today"; }
+		  if ($tweetday==$ksd) { $tweetdate = "Today"; }
 		  else if ($tweetday==($ksd-1)) { $tweetdate = "yesterday"; }
 		  else { $tweetdate = "On " . $tweetdate; }
 		$tweettime = $item->get_date('g\:i a');
 		
-			print "<p>".$tweet."</p><p>".$tweetdate." at ".$tweettime."</p>";
+		$twsearch = array(
+		'%((www\.|(http|https)+\:\/\/)[_.a-zA-Z0-9-]+\.[a-zA-Z0-9\/_:@=.+?,##\%&~-]*[^.|\'|\# |!|\(|?|,| |>|<|;|\)])%',
+				  '|@([\w_]+)|',
+				  '|#([\w_]+)|'
+		);
+		$twreplace = array(
+		  '<a href="$1">$1</a>',
+		  '<a href="http://twitter.com/$1">@$1</a>',
+		  '<a href="http://twitter.com/search?q=%23$1">#$1</a>'
+		);
+		$tweet = preg_replace($twsearch, $twreplace, $tweet);
+			
+			print "<p class=\"twitter\">".$tweet."</p><p class=\"twitdate\">".$tweetdate." at ".$tweettime."</p>";
 			}
 			}
 			}

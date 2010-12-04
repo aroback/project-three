@@ -207,6 +207,22 @@ color: #383838;
 line-height: 1.5;
 font-family: "Palatino Linotype", garamond, "Times New Roman", serif; 
 }
+
+p.twitter {
+color: #383838;
+line-height: 1.1;
+font-size: 100%;
+font-family: "Palatino Linotype", garamond, "Times New Roman", serif;
+}
+
+p.twitdate {
+color: #383838;
+line-height: 1.1;
+font-size: small;
+font-family: calibri, "arial narrow", arial, "sans serif";
+text-align: right;
+padding-bottom: 20px;
+}
 	
 h2 {
 padding-top: 20px;
