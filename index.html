@@ -60,7 +60,6 @@
 			$feed->enable_cache(false);
 			$feed->init();
 			$feed->handle_content_type();
-			echo '<h1><a href="'.$feed->get_link().'">'.$feed->get_title().'</a></h1>';
 			$myitems = $feed->get_items();
 			foreach ($myitems as $item) {
 				echo '<p>'.$item->get_title().'</p>';
