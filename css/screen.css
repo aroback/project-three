@@ -185,6 +185,16 @@ width: 230px;
 background-color: #e3e3e3;
 }
 
+div#rss_feed_area { /*can be grouped with #narrow_content*/
+position: absolute;
+margin-left: 700px;
+padding-top: 20px;
+padding-left: 10px;
+padding-right: 10px;
+width: 230px;
+background-color: #d6d6d6;
+}
+
 div#footer {
 position: relative;
 padding-top:10px;
