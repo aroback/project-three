@@ -79,11 +79,16 @@ display: inline;
 position: relative;
 margin: 2px;
 text-align: right;
+padding-right: 5px;
 padding-left: 5px;
 background-color: #50A6C2;
 color: white;
 font-size: small;
 font-family: calibri, "arial narrow", arial, "sans serif";
+}
+
+div#cv_navbar li.active {
+font-weight: bold;
 }
 
 div#cv_navbar li + li {
